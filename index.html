@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script>
+        function onload() {
+            var xhr = new XMLHttpRequest();
+            var referrer = 'http://twitter.com';
+            xhr.open('POST',
+                    'http://localhost:6529/api/posts/' +
+                    encodeURIComponent('2014/03/18/the-rest-of-fluent-conf') +
+                    '/visits' + (referrer ? '?referrer=' + referrer : ''));
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="onload();">
+</body>
+</html>
