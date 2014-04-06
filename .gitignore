@@ -2,6 +2,8 @@ node_modules
 lib-cov
 .idea
 database.json
+analytics.log
+auth
 *.seed
 *.log
 *.csv
