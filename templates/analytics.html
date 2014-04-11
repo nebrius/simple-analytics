@@ -1,12 +1,139 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}} Analytics</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="Chart.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} Analytics</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="Chart.js"></script>
+  <script>
+    function onload() {
+
+      // Fetch and resize the canvas
+      var canvas = document.getElementById('visitsChart');
+      canvas.width = Math.round(document.getElementById('visitsChartContainer').clientWidth - 30);
+      document.getElementById('visitsChartContainer').style.width = canvas.width + 30 + 'px'; // Lock the width in place
+      var context = canvas.getContext('2d');
+      if (!context) {
+        return;
+      }
+
+      // Create the visits chart
+      var data = {{{ visitsChartData }}},
+          labels = {{{ visitsChartLabels }}};
+      new Chart(context).Line({
+        labels: labels,
+        datasets: [{
+          fillColor: 'rgba(151, 187, 205, 0.5)',
+          strokeColor : 'rgba(151, 187, 205, 1)',
+          data: data
+        }]
+      }, {
+        bezierCurve : false,
+        pointDot : true,
+        pointDotRadius : 2,
+        pointDotStrokeWidth : 1
+      });
+    }
+  </script>
+  <style>
+    .chart_container {
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 30px 0 20px 0;
+    }
+    body {
+      padding: 5px 20px;
+    }
+    .center {
+        text-align: center;
+    }
+  </style>
 </head>
-<body>
-<h1>This is the analytics page</h1>
+<body onload="onload();">
+<h1 class="center">{{title}} Analytics</h1>
+<div class="chart_container" id="visitsChartContainer">
+  <h4 class="center">Daily Visits</h4>
+  <canvas id="visitsChart" height="250"></canvas>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="center">Today</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Visits</th>
+      </tr>
+      {{#todaysVisitsTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{visits}}</td>
+      </tr>
+      {{/todaysVisitsTable}}
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4 class="center">Yesterday</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Visits</th>
+      </tr>
+      {{#yesterdaysVisitsTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{visits}}</td>
+      </tr>
+      {{/yesterdaysVisitsTable}}
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="center">This Week</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Visits</th>
+      </tr>
+      {{#thisWeeksVisitsTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{visits}}</td>
+      </tr>
+      {{/thisWeeksVisitsTable}}
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4 class="center">Last Week</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Visits</th>
+      </tr>
+      {{#lastWeeksVisitsTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{visits}}</td>
+      </tr>
+      {{/lastWeeksVisitsTable}}
+    </table>
+  </div>
+</div>
+<div>
+  <h4 class="center">All Time</h4>
+  <table class="table table-striped">
+    <tr>
+      <th>Post</th>
+      <th>Visits</th>
+    </tr>
+    {{#allTimeVisitsTable}}
+    <tr>
+      <td>{{post}}</td>
+      <td>{{visits}}</td>
+    </tr>
+    {{/allTimeVisitsTable}}
+  </table>
+</div>
 </body>
 </html>
