@@ -19,7 +19,8 @@
     "transport-logger": "0.1.x",
     "mustache": "0.8.x",
     "async": "0.6.x",
-    "prompt": "0.2.x"
+    "prompt": "0.2.x",
+    "wrench": "1.5.x"
   },
   "author": "Bryan Hughes <bryan@theoreticalideations.com>",
   "license": "MIT"
