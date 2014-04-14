@@ -25,7 +25,7 @@ After your configuration file is all set up, you will need to create the authent
 
 ```[sudo] simple-analytics -a```
 
-This will create the salted and hashed (via pbkdf2) authentication file at ```/etc/simple-analytics/auth```. You can optionally specify a path specifying where to store the authentication information.
+This will create the salted and hashed (via pbkdf2) authentication file at ```/etc/simple-analytics/auth```. You can optionally specify a path specifying where to store the authentication information. You can change your password at any time by re-running this command.
 
 Once this is done, to start the server run:
 
