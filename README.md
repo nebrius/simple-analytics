@@ -1,7 +1,7 @@
 Simple Analytics Server
 =======================
 
-Simple node.js based site analytics server. It is not intended to be powerful, configurable, or scalable. Instead, it's really just to serve as a stop-gap until [Ghost Blog](https://ghost.org/) gets its dashboard released.
+Simple node.js based real-time site analytics server. It is not really intended to be powerful, configurable, or scalable. Instead, it's really just to serve as a stop-gap until [Ghost Blog](https://ghost.org/) gets its dashboard released.
 
 To install:
 
