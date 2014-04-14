@@ -1,6 +1,6 @@
 {
   "name": "simple-analytics",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A simple web analytics server",
   "main": "index.js",
   "scripts": {
