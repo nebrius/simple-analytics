@@ -54,6 +54,20 @@ location /analytics/ {
 }
 ```
 
+Once you have the analytics server up and running, add the following snippet of code to the pages you want to track, making sure to replace ```https://example.com/analytics``` with your analytics server url:
+
+```
+<script>
+  var xhr = new XMLHttpRequest(),
+      postid = window.location.pathname.split('/');
+  xhr.open('POST',
+      'https://example.com/analytics/api/posts/' +
+      postid[postid.length - 2] +
+      '/visits' + (document.referrer ? '?referrer=' + document.referrer : ''));
+  xhr.send();
+</script>
+```
+
 License
 =======
 
