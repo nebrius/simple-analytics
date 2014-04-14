@@ -13,6 +13,7 @@ Once this is done, create a configuration file and put it at ```/etc/simple-anal
 
 The configuration file has five options:
 * siteName: The name of your website. This value gets put into the analytics page in a few places
+* rootUrlPath: The root url path for the analytics page (used for redirecting)
 * dataFile: Path to the JSON file that stores the page visit information
 * port: The server's listen port
 * logFile: The file to log to
@@ -32,15 +33,26 @@ simple-analytics
 
 This will use the default ```/etc/simple-analytics/simple-analytics.conf``` configuration file.
 
-You can specify an optional configuration file using the -p flag (this is required on Windows or other non-POSIX systems):
+You can specify an optional configuration file using the -p flag (this is required on Windows):
 
 ```
 simple-analytics -p path/to/configuration/file.json
 ```
 
-For security reasons, you may
+To have this service run at startup, use one of the mechanism described for [Ghost Blog deploy](http://docs.ghost.org/installation/deploy/).
 
-To have this service run at startup, use the same mechanism that [Ghost Blog uses](http://docs.ghost.org/installation/deploy/).
+Simple Analytics is designed to be run locally only, meaning you will need to setup a proxy in front of it. If you want analytics to be available at ```http://example.com/analytics``` and are using nginx:
+
+```
+location /analytics/ {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_pass http://localhost:6529/;
+    proxy_set_header Host $host;
+    proxy_buffering off;
+}
+```
 
 License
 =======
