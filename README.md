@@ -14,10 +14,12 @@ Once this is done, create a configuration file and put it at ```/etc/simple-anal
 The configuration file has five options:
 * siteName: The name of your website. This value gets put into the analytics page in a few places
 * rootUrlPath: The root url path for the analytics page (used for redirecting)
-* dataFile: Path to the JSON file that stores the page visit information
+* dataFile: Path to the JSON file that stores the page visit information.
 * port: The server's listen port
 * logFile: The file to log to
 * auth: The file that stores the admin login information
+ 
+Note: make sure that the analytics server has write access to ```dataFile``` and ```logFile```. ```auth``` can, and should be, read-only.
 
 After your configuration file is all set up, you will need to create the authentication information. Run:
 
@@ -62,11 +64,13 @@ Once you have the analytics server up and running, add the following snippet of 
       postid = window.location.pathname.split('/');
   xhr.open('POST',
       'https://example.com/analytics/api/posts/' +
-      postid[postid.length - 2] +
+      (postid[postid.length - 2] || 'Homepage') +
       '/visits' + (document.referrer ? '?referrer=' + document.referrer : ''));
   xhr.send();
 </script>
 ```
+
+You may need to tweak the line containing ```(postid[postid.length - 2] || 'Homepage')``` to match the naming/url scheme of your website.
 
 License
 =======
