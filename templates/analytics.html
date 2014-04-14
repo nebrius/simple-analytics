@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}} Analytics</title>
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src="Chart.min.js"></script>
   <script>
     function onload() {
@@ -48,9 +48,14 @@
     .center {
         text-align: center;
     }
+    .logout {
+      color: #aaa;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body onload="onload();">
+<p class="text-right"><a href="logout" class="logout">logout</a></p>
 <h1 class="center">{{title}} Analytics</h1>
 <div class="chart_container" id="visitsChartContainer">
   <h4 class="center">Daily Visits</h4>
