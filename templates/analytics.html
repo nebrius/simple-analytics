@@ -95,6 +95,38 @@
 </div>
 <div class="row">
   <div class="col-md-6">
+    <h4 class="center">Today's Referrers</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Referrers</th>
+      </tr>
+      {{#todaysReferrersTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{referrers}}</td>
+      </tr>
+      {{/todaysReferrersTable}}
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4 class="center">Yesterday's Referrers</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Referrers</th>
+      </tr>
+      {{#yesterdaysReferrersTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{referrers}}</td>
+      </tr>
+      {{/yesterdaysReferrersTable}}
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
     <h4 class="center">This Week</h4>
     <table class="table table-striped">
       <tr>
@@ -122,6 +154,38 @@
         <td>{{visits}}</td>
       </tr>
       {{/lastWeeksVisitsTable}}
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="center">This Week's Referrers</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Referrers</th>
+      </tr>
+      {{#thisWeeksReferrersTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{referrers}}</td>
+      </tr>
+      {{/thisWeeksReferrersTable}}
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4 class="center">Last Week's Referrers</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Post</th>
+        <th>Referrers</th>
+      </tr>
+      {{#lastWeeksReferrersTable}}
+      <tr>
+        <td>{{post}}</td>
+        <td>{{referrers}}</td>
+      </tr>
+      {{/lastWeeksReferrersTable}}
     </table>
   </div>
 </div>
