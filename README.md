@@ -3,6 +3,8 @@ Simple Analytics Server
 
 Simple node.js based real-time site analytics server. It is not really intended to be powerful, configurable, or scalable. Instead, it's really just to serve as a stop-gap until [Ghost Blog](https://ghost.org/) gets its dashboard released.
 
+![Simple Analytics Screenshot](https://theoreticalideations.com/static/simple-analytics.png "Screenshot of Simple Analytics Dashboard")
+
 To install:
 
 ```
