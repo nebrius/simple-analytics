@@ -1,6 +1,6 @@
 {
   "name": "simple-analytics",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A simple web analytics server",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "type": "git",
     "url": "https://gitlab.theoreticalideations.com/nebrius/simple-analytics"
   },
+  "homepage": ""https://gitlab.theoreticalideations.com/nebrius/simple-analytics",
   "bin": "./bin/simple-analytics",
   "dependencies": {
     "commander": "2.2.x",
