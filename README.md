@@ -64,9 +64,12 @@ Once you have the analytics server up and running, add the following snippet of 
 <script>
   var xhr = new XMLHttpRequest(),
       postid = window.location.pathname.split('/');
+  postid = postid[postid.length - 2];
+  if (!postid || /^[0-9]*$/.test(postid)) {
+    postid = 'Homepage';
+  }
   xhr.open('POST',
-      'https://example.com/analytics/api/posts/' +
-      (postid[postid.length - 2] || 'Homepage') +
+      'https://theoreticalideations.com/analytics/api/posts/' + postid +
       '/visits' + (document.referrer ? '?referrer=' + document.referrer : ''));
   xhr.send();
 </script>
