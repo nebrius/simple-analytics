@@ -1,6 +1,6 @@
 {
   "name": "simple-analytics",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A small-scale real-time web analytics server that only requires Node.js",
   "main": "index.js",
   "scripts": {
