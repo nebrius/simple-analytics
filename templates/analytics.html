@@ -52,6 +52,17 @@
       color: #aaa;
       text-decoration: none;
     }
+    .entry_name {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .count_header {
+      width: 100px;
+    }
+    table {
+      table-layout: fixed;
+    }
   </style>
 </head>
 <body onload="onload();">
@@ -67,11 +78,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Visits</th>
+        <th class="count_header">Visits</th>
       </tr>
       {{#todaysVisitsTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{visits}}</td>
       </tr>
       {{/todaysVisitsTable}}
@@ -82,11 +93,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Visits</th>
+        <th class="count_header">Visits</th>
       </tr>
       {{#yesterdaysVisitsTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{visits}}</td>
       </tr>
       {{/yesterdaysVisitsTable}}
@@ -99,11 +110,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Referrers</th>
+        <th class="count_header">Referrers</th>
       </tr>
       {{#todaysReferrersTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{referrers}}</td>
       </tr>
       {{/todaysReferrersTable}}
@@ -114,11 +125,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Referrers</th>
+        <th class="count_header">Referrers</th>
       </tr>
       {{#yesterdaysReferrersTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{referrers}}</td>
       </tr>
       {{/yesterdaysReferrersTable}}
@@ -131,11 +142,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Visits</th>
+        <th class="count_header">Visits</th>
       </tr>
       {{#thisWeeksVisitsTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{visits}}</td>
       </tr>
       {{/thisWeeksVisitsTable}}
@@ -146,11 +157,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Visits</th>
+        <th class="count_header">Visits</th>
       </tr>
       {{#lastWeeksVisitsTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{visits}}</td>
       </tr>
       {{/lastWeeksVisitsTable}}
@@ -163,11 +174,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Referrers</th>
+        <th class="count_header">Referrers</th>
       </tr>
       {{#thisWeeksReferrersTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{referrers}}</td>
       </tr>
       {{/thisWeeksReferrersTable}}
@@ -178,11 +189,11 @@
     <table class="table table-striped">
       <tr>
         <th>Post</th>
-        <th>Referrers</th>
+        <th class="count_header">Referrers</th>
       </tr>
       {{#lastWeeksReferrersTable}}
       <tr>
-        <td>{{post}}</td>
+        <td><div class="entry_name">{{post}}</div></td>
         <td>{{referrers}}</td>
       </tr>
       {{/lastWeeksReferrersTable}}
@@ -194,11 +205,11 @@
   <table class="table table-striped">
     <tr>
       <th>Post</th>
-      <th>Visits</th>
+      <th class="count_header">Visits</th>
     </tr>
     {{#allTimeVisitsTable}}
     <tr>
-      <td>{{post}}</td>
+      <td><div class="entry_name">{{post}}</div></td>
       <td>{{visits}}</td>
     </tr>
     {{/allTimeVisitsTable}}
