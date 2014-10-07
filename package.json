@@ -1,6 +1,6 @@
 {
   "name": "simple-analytics",
-  "version": "0.1.14",
+  "version": "1.0.0",
   "description": "A small-scale real-time web analytics server that only requires Node.js",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.theoreticalideations.com/nebrius/simple-analytics"
+    "url": "https://github.com/bryan-m-hughes/simple-analytics"
   },
-  "homepage": "https://gitlab.theoreticalideations.com/nebrius/simple-analytics",
+  "homepage": "https://github.com/bryan-m-hughes/simple-analytics",
   "bin": "./bin/simple-analytics",
   "dependencies": {
     "commander": "2.2.x",

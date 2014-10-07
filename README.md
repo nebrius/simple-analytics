@@ -69,7 +69,7 @@ Once you have the analytics server up and running, add the following snippet of 
     postid = 'Homepage';
   }
   xhr.open('POST',
-      'https://theoreticalideations.com/analytics/api/posts/' + postid +
+      'https://example.com/api/posts/' + postid +
       '/visits' + (document.referrer ? '?referrer=' + document.referrer : ''));
   xhr.send();
 </script>
